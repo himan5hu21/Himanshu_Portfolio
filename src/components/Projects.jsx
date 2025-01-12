@@ -22,7 +22,12 @@ function Projects() {
               <p className="text-sm text-slate-300 text-justify">
                 {project.description}
               </p>
-              <a className="ml-auto text-slate-300 hover:text-white flex items-center space-x-2 mt-2 border border-slate-300 hover:border-white py-2 px-4 rounded cursor-pointer">
+              <a
+                href={project.url}
+                className="ml-auto text-slate-300 hover:text-white flex items-center space-x-2 mt-2 border border-slate-300 hover:border-white py-2 px-4 rounded cursor-pointer"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
                 <SiGithub className="text-2xl" />
                 <span>View Code</span>
               </a>
