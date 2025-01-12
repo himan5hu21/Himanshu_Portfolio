@@ -9,8 +9,8 @@ function About() {
         id="about"
         className="flex justify-between items-center gap-5 mt-5"
       >
-        <div className="hidden md:block">
-          <div className="bg-sky-500 bgradius">
+        <div className="hidden lg:block">
+          <div className="bg-sky-500 bgradius lg:w-72 xl:w-64">
             <img src={image} alt="Himanshu Devaiya" className="w-full" />
           </div>
         </div>
