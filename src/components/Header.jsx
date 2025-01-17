@@ -103,6 +103,7 @@ function Header() {
                   offset={-150} /* Adjust the offset value as needed */
                   className="cursor-pointer"
                   href={`#${anchor}`}
+                  onClick={closeMenu}
                 >
                   {label}
                 </Link>
