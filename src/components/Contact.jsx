@@ -69,99 +69,105 @@ function Contact() {
 
   return (
     <Element name="contact" className="py-5 px-6 md:py-10 md:px-12">
-      <h1 className="text-4xl font-bold text-center text-sky-600">
-        Get in touch
-      </h1>
-      <section className="flex flex-col md:flex-row justify-between md:items-center gap-10 mt-5">
-        <div className="flex-1">
-          <h2 className="text-2xl md:text-3xl font-bold">Let&#39;s talk</h2>
-          <p className="mt-2 md:mt-5 text-base md:text-lg">
-            I&#39;m currently available to take new projects, so feel free to
-            send me a message about anything that you want me to work on. You
-            can contact anytime.
-          </p>
+      <section id="contact">
+        <h1 className="text-4xl font-bold text-center text-sky-600">
+          Get in touch
+        </h1>
+        <section className="flex flex-col md:flex-row justify-between md:items-center gap-10 mt-5">
+          <div className="flex-1">
+            <h2 className="text-2xl md:text-3xl font-bold">Let&#39;s talk</h2>
+            <p className="mt-2 md:mt-5 text-base md:text-lg">
+              I&#39;m currently available to take new projects, so feel free to
+              send me a message about anything that you want me to work on. You
+              can contact anytime.
+            </p>
 
-          <div className="flex flex-col gap-5 mt-5 text-base md:text-lg">
-            <div className="flex items-center gap-2">
-              <img src={mail} alt="mail" className="w-6 h-6" />
-              <a
-                href="mailto:himanshudevaiya679@gmail.com"
-                className="text-wrap"
-              >
-                himanshudevaiya679@gmail.com
-              </a>
-            </div>
-            <div className="flex items-center gap-2">
-              <img src={call} alt="call" className="w-6 h-6" />
-              <a href="tel:+91-926-506-7967">+91-926-506-7967</a>
-            </div>
-            <div className="flex items-center gap-2">
-              <img src={location} alt="location" className="w-6 h-6" />
-              <p>Ahmedabad, Gujarat, India</p>
+            <div className="flex flex-col gap-5 mt-5 text-base md:text-lg">
+              <div className="flex items-center gap-2">
+                <img src={mail} alt="mail" className="w-6 h-6" />
+                <a
+                  href="mailto:himanshudevaiya679@gmail.com"
+                  className="text-wrap"
+                >
+                  himanshudevaiya679@gmail.com
+                </a>
+              </div>
+              <div className="flex items-center gap-2">
+                <img src={call} alt="call" className="w-6 h-6" />
+                <a href="tel:+91-926-506-7967">+91-926-506-7967</a>
+              </div>
+              <div className="flex items-center gap-2">
+                <img src={location} alt="location" className="w-6 h-6" />
+                <p>Ahmedabad, Gujarat, India</p>
+              </div>
             </div>
           </div>
-        </div>
 
-        <form className="flex-1" onSubmit={onSubmit}>
-          <div className="mb-5 flex flex-col text-base md:text-lg">
-            <label htmlFor="name">Your Name</label>
-            <input
-              type="text"
-              name="name"
-              id="name"
-              placeholder="Enter Your Name"
-              className="mt-2 bg-slate-500/20 rounded-md px-3 py-2"
-              required
+          <form className="flex-1" onSubmit={onSubmit}>
+            <div className="mb-5 flex flex-col text-base md:text-lg">
+              <label htmlFor="name">Your Name</label>
+              <input
+                type="text"
+                name="name"
+                id="name"
+                placeholder="Enter Your Name"
+                className="mt-2 bg-slate-500/20 rounded-md px-3 py-2"
+                required
+              />
+            </div>
+            <div className="mb-5 flex flex-col">
+              <label htmlFor="email">Your Email</label>
+              <input
+                type="email"
+                name="email"
+                id="email"
+                placeholder="Enter Your Email"
+                className="mt-2 bg-slate-500/20 rounded-md px-3 py-2"
+                required
+              />
+            </div>
+            <div className="mb-5 flex flex-col">
+              <label htmlFor="message">Your Message</label>
+              <textarea
+                name="message"
+                id="message"
+                placeholder="Enter Your Message"
+                rows={5}
+                className="mt-2 bg-slate-500/20 rounded-md px-3 py-2"
+                required
+              ></textarea>
+            </div>
+
+            <button
+              type="submit"
+              className={`flex justify-center items-center gap-2 w-56 font-semibold text-xl bg-sky-500 text-white px-5 py-2 rounded-full hover:bg-sky-600 transition duration-300 ease-in-out ${
+                loading && "cursor-not-allowed"
+              }`}
+              disabled={loading}
+              aria-live={loading ? "assertive" : "off"}
+              aria-busy={loading ? "true" : "false"}
+            >
+              {loading ? (
+                <img src={spinner} alt="spinner" className="animate-spin" />
+              ) : (
+                <IoIosSend className="text-2xl" />
+              )}
+
+              <span className="sr-only">
+                {loading ? "Sending..." : "Send Message"}
+              </span>
+            </button>
+          </form>
+
+          {showToast && (
+            <SuccessfullToast
+              isError={isError}
+              showToast={showToast}
+              setToast={setShowToast}
+              statusMessage={statusMessage}
             />
-          </div>
-          <div className="mb-5 flex flex-col">
-            <label htmlFor="email">Your Email</label>
-            <input
-              type="email"
-              name="email"
-              id="email"
-              placeholder="Enter Your Email"
-              className="mt-2 bg-slate-500/20 rounded-md px-3 py-2"
-              required
-            />
-          </div>
-          <div className="mb-5 flex flex-col">
-            <label htmlFor="message">Your Message</label>
-            <textarea
-              name="message"
-              id="message"
-              placeholder="Enter Your Message"
-              rows={5}
-              className="mt-2 bg-slate-500/20 rounded-md px-3 py-2"
-              required
-            ></textarea>
-          </div>
-
-          <button
-            type="submit"
-            className={`flex justify-center items-center gap-2 w-56 font-semibold text-xl bg-sky-500 text-white px-5 py-2 rounded-full hover:bg-sky-600 transition duration-300 ease-in-out ${
-              loading && "cursor-not-allowed"
-            }`}
-            disabled={loading}
-          >
-            {loading ? (
-              <img src={spinner} alt="spinner" className="animate-spin" />
-            ) : (
-              <IoIosSend className="text-2xl" />
-            )}
-
-            {loading ? "Sending..." : "Send Message"}
-          </button>
-        </form>
-
-        {showToast && (
-          <SuccessfullToast
-            isError={isError}
-            showToast={showToast}
-            setToast={setShowToast}
-            statusMessage={statusMessage}
-          />
-        )}
+          )}
+        </section>
       </section>
     </Element>
   );

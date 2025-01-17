@@ -51,7 +51,14 @@ function Home() {
         <div className="order-1 md:order-2">
           <div className="rounded-full w-auto bg-sky-500 overflow-hidden">
             {image && (
-              <img src={image} alt="Profile" className="w-80 sm:w-96" />
+              <img
+                src={image}
+                alt="Profile"
+                className="w-80 sm:w-96"
+                loading="lazy"
+                width="384"
+                height="384"
+              />
             )}
           </div>
         </div>

@@ -43,6 +43,7 @@ function Header() {
       <button
         onClick={toggleMenu}
         className="outline-none text-gray-400 block hover:text-sky-600 sm:hidden"
+        aria-label="Open Menu"
       >
         <svg
           xmlns="http://www.w3.org/2000/svg"
@@ -62,7 +63,7 @@ function Header() {
 
       <div
         ref={drawerRef}
-        className={`fixed flex sm:relative top-0 right-0 sm:right-auto w-3/4 sm:w-auto h-full bg-slate-800/85 sm:bg-transparent z-40 transition-transform duration-500 ${
+        className={`fixed flex sm:relative top-0 right-0 sm:right-auto w-3/4 sm:w-auto h-full bg-slate-900 sm:bg-transparent z-40 transition-transform duration-500 ${
           isOpen ? "translate-x-0" : "translate-x-full"
         } sm:translate-x-0 sm:block`}
       >
@@ -71,6 +72,7 @@ function Header() {
             <button
               onClick={closeMenu}
               className="outline-none text-gray-400 block hover:text-sky-600 mb-4 sm:hidden"
+              aria-label="Close Menu"
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -89,7 +91,7 @@ function Header() {
             </button>
           </div>
 
-          <ul className="flex flex-col sm:flex-row gap-5 text-base md:text-lg text-gray-200">
+          <ul className="flex flex-col sm:flex-row gap-5 text-base md:text-lg text-white">
             {Object.entries(links).map(([anchor, label]) => (
               <li key={anchor}>
                 <Link
@@ -100,6 +102,7 @@ function Header() {
                   spy={true}
                   offset={-150} /* Adjust the offset value as needed */
                   className="cursor-pointer"
+                  href={`#${anchor}`}
                 >
                   {label}
                 </Link>
