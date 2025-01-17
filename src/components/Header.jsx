@@ -16,6 +16,19 @@ function Header() {
   const drawerRef = useRef();
 
   useEffect(() => {
+    if (isOpen) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "";
+    }
+
+    // Cleanup in case the component unmounts
+    return () => {
+      document.body.style.overflow = "";
+    };
+  }, [isOpen]);
+
+  useEffect(() => {
     const handleOutsideClick = (event) => {
       if (
         isOpen &&
@@ -61,11 +74,21 @@ function Header() {
         </svg>
       </button>
 
+      {isOpen && (
+        <div
+          className="fixed top-0 left-0 w-full h-full bg-black bg-opacity-50 z-30 transition-opacity duration-500"
+          onClick={closeMenu} // Close menu when clicking on the overlay
+        />
+      )}
+
       <div
         ref={drawerRef}
-        className={`fixed flex sm:relative top-0 right-0 sm:right-auto w-3/4 sm:w-auto h-full bg-slate-900 sm:bg-transparent z-40 transition-transform duration-500 ${
+        className={`fixed flex sm:relative top-0 right-0 sm:right-auto w-3/4 sm:w-auto h-full bg-slate-800 sm:bg-transparent z-40 transition-transform duration-500 ${
           isOpen ? "translate-x-0" : "translate-x-full"
         } sm:translate-x-0 sm:block`}
+        style={{
+          boxShadow: isOpen ? "-4px 0 10px rgba(0, 0, 0, 0.5)" : "none", // Left-side shadow
+        }}
       >
         <div className="w-full p-6 sm:p-0">
           <div className="flex justify-center sm:hidden">
@@ -103,6 +126,7 @@ function Header() {
                   offset={-150} /* Adjust the offset value as needed */
                   className="cursor-pointer"
                   href={`#${anchor}`}
+                  onClick={closeMenu}
                 >
                   {label}
                 </Link>
