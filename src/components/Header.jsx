@@ -10,10 +10,15 @@ function Header() {
     contact: "Contact",
   };
 
+  const [activeLink, setActiveLink] = useState("home");
   const [isOpen, setIsOpen] = useState(false);
   const toggleMenu = () => setIsOpen(!isOpen);
   const closeMenu = () => setIsOpen(false);
   const drawerRef = useRef();
+
+  const handleActiveLink = (anchor) => {
+    setActiveLink(anchor);
+  };
 
   useEffect(() => {
     if (isOpen) {
@@ -46,7 +51,7 @@ function Header() {
   }, [isOpen]);
 
   return (
-    <section className="sticky top-5 flex justify-between py-3 px-6 md:py-6 md:px-12 items-center shadow-md bg-slate-800/85 rounded-full">
+    <section className="sticky top-5 flex justify-between py-3 px-6 md:py-6 md:px-12 items-center shadow-md bg-slate-800/85 rounded-full z-50">
       <div>
         <h1 className="font-playfair text-xl md:text-3xl font-medium">
           <span className="text-3xl md:text-5xl text-sky-500">H</span>imanshu
@@ -119,16 +124,21 @@ function Header() {
               <li key={anchor}>
                 <Link
                   to={anchor}
-                  activeClass="text-sky-500 border-b-2 border-sky-500 transition duration-300 ease-in-out"
+                  href={`#${anchor}`}
                   smooth={true}
                   duration={500}
                   spy={true}
-                  offset={-150} /* Adjust the offset value as needed */
-                  className="cursor-pointer"
-                  href={`#${anchor}`}
+                  offset={-120}
+                  // activeClass="text-sky-500 border-b-2 border-sky-500 transition duration-300 ease-in-out"
+                  className={`cursor-pointer ${
+                    activeLink === anchor &&
+                    "text-sky-500 border-b-2 border-sky-500 transition duration-300 ease-in-out"
+                  }`}
+                  onSetActive={() => handleActiveLink(anchor)}
                   onClick={closeMenu}
                 >
                   {label}
+                  <span></span>
                 </Link>
               </li>
             ))}

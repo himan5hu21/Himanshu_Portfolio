@@ -68,7 +68,7 @@ function Contact() {
   };
 
   return (
-    <Element name="contact" className="py-5 px-6 md:py-10 md:px-12">
+    <Element name="contact" className="py-10 px-6 md:py-20 md:px-12">
       <section id="contact">
         <h1 className="text-4xl font-bold text-center text-sky-600">
           Get in touch
@@ -153,9 +153,7 @@ function Contact() {
                 <IoIosSend className="text-2xl" />
               )}
 
-              <span className="sr-only">
-                {loading ? "Sending..." : "Send Message"}
-              </span>
+              <span>{loading ? "Sending..." : "Send Message"}</span>
             </button>
           </form>
 

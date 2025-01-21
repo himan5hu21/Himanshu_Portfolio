@@ -4,7 +4,7 @@ import { SiGithub } from "react-icons/si";
 
 function Projects() {
   return (
-    <Element name="projects" className="py-5 px-6 md:py-10 md:px-12">
+    <Element name="projects" className="pt-10 px-6 md:pt-20 md:px-12">
       <section id="projects">
         <h1 className="text-4xl font-bold text-center text-sky-600">
           Projects
