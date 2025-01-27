@@ -10,15 +10,6 @@ This personal portfolio website is designed to highlight your professional journ
 ---
 
 
-## Features
-- ⚡ **Fast Performance**: Built using Vite for a blazing-fast development experience.
-- 🌐 **Responsive Design**: Seamlessly adapts to desktop, tablet, and mobile devices.
-- 🎨 **Tailwind CSS Styling**: Clean and modern UI with utility-first CSS.
-- 🖼️ **Showcase Projects**: Display your best work with descriptions and live links.
-- 📞 **Contact Section**: A dedicated contact form to reach out to you easily.
-
----
-
 ## Sections
 1. **Home**: A welcoming introduction with your name and role.
 2. **About Me**: Brief details about your background and interests.
