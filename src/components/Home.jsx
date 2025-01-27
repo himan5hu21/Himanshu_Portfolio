@@ -4,7 +4,7 @@ import resume from "../assets/documents/resume.pdf";
 
 function Home() {
   return (
-    <Element name="home" className="pt-10 px-6 md:pt-20 md:px-12">
+    <Element name="home" className="section-p1">
       <section
         id="home"
         className="flex md:flex-row flex-col justify-between items-center"

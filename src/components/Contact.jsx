@@ -68,7 +68,7 @@ function Contact() {
   };
 
   return (
-    <Element name="contact" className="py-10 px-6 md:py-20 md:px-12">
+    <Element name="contact" className="section-p2">
       <section id="contact">
         <h1 className="text-4xl font-bold text-center text-sky-600">
           Get in touch

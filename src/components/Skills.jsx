@@ -17,7 +17,7 @@ import { FaJava } from "react-icons/fa";
 
 function Skills() {
   return (
-    <Element name="skills" className="pt-10 px-6 md:pt-20 md:px-12">
+    <Element name="skills" className="section-p1">
       <section id="skills">
         <h1 className="text-4xl font-bold text-center text-sky-600">Skills</h1>
         <div className="flex justify-center items-center mt-5">

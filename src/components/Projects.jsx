@@ -4,7 +4,7 @@ import { SiGithub } from "react-icons/si";
 
 function Projects() {
   return (
-    <Element name="projects" className="pt-10 px-6 md:pt-20 md:px-12">
+    <Element name="projects" className="section-p1">
       <section id="projects">
         <h1 className="text-4xl font-bold text-center text-sky-600">
           Projects
@@ -12,18 +12,21 @@ function Projects() {
         <section className="grid grid-cols-1 md:grid-cols-3 gap-5 mt-5">
           {projectsDetail.map((project) => (
             <div
-              className="flex flex-col justify-center items-start bg-slate-500/20 rounded-xl overflow-hidden hover:border-2 h-96 border-transparent hover:border-sky-600 transition-all duration-300 ease-in-out hover:scale-105 shadow-sm shadow-gray-600"
+              className="flex flex-col bg-slate-500/20 rounded-xl overflow-hidden transition-all duration-300 ease-in-out hover:shadow-lg hover:shadow-gray-500 h-96"
               key={project.name}
             >
-              <img
-                src={project.image}
-                alt={project.name}
-                loading="lazy"
-                className="h-56 w-full rounded-md object-cover"
-              />
+              <div className="h-full overflow-hidden">
+                <img
+                  src={project.image}
+                  alt={project.name}
+                  loading="lazy"
+                  className="h-full w-full rounded-md object-cover"
+                />
+              </div>
+
               <div className="p-4 flex flex-col justify-between h-full">
                 <h2 className="text-xl font-bold mb-2">{project.name}</h2>
-                <p className="text-sm text-slate-300 text-justify">
+                <p className="text-sm text-slate-300 text-justify overflow-hidden line-clamp-4">
                   {project.description}
                 </p>
                 <a

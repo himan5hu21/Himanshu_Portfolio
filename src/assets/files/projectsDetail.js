@@ -1,6 +1,7 @@
 import real_estate from "../images/real_estate_image.png";
 import portfolio from "../images/portfolio_image.png";
 import travelx from "../images/travelx_image.png";
+import e_commerce from "../images/e-commerce.png";
 
 export const projectsDetail = [
   {
@@ -23,5 +24,12 @@ export const projectsDetail = [
       "A responsive landing page for a travel website featuring sections like hero, services, about, popular places, travel tips, and contact. Built using HTML, CSS, and Bootstrap for a clean and modern design.",
     image: travelx,
     url: "https://github.com/himan5hu21/TravelX.git",
+  },
+  {
+    name: "E-commerce Website",
+    description:
+      "A modern e-commerce website showcasing a homepage, product page, and shopping cart, designed with HTML, CSS, and JavaScript for a seamless user experience and responsive layout.",
+    image: e_commerce,
+    url: "https://github.com/himan5hu21/e-commerce-front-end.git",
   },
 ];

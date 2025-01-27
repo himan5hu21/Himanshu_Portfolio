@@ -3,7 +3,7 @@ import image from "../assets/images/about_image.png";
 
 function About() {
   return (
-    <Element name="about" className="pt-10 px-6 md:pt-20 md:px-12">
+    <Element name="about" className="section-p1">
       <section id="about">
         <h1 className="text-4xl font-bold text-center text-sky-600">
           About Me

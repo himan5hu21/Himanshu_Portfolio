@@ -1,3 +1,21 @@
 .bgradius {
   border-radius: 80% 20% 80% 20% / 82% 16% 84% 18%;
 }
+
+.section-p1 {
+  padding: 40px 24px 0;
+}
+
+.section-p2 {
+  padding: 40px 24px;
+}
+
+@media (min-width: 768px) {
+  .section-p1 {
+    padding: 80px 48px 0;
+  }
+
+  .section-p2 {
+    padding: 80px 48px;
+  }
+}
